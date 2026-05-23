@@ -8,3 +8,15 @@ Start here:
 
 - [Build-readiness checklist](build-readiness-checklist.md)
 
+Project references:
+
+- [Diagrams](diagrams/)
+- [Information schemas](schemas/)
+- [Structured design data](data/)
+- [Design decisions](decisions/)
+
+Working rule:
+
+- As design choices are made, update the checklist first.
+- Add or update diagrams and structured data when a choice affects wiring, layout, component selection, validation, or service procedure.
+- Link accepted decisions back to the checklist section they close.

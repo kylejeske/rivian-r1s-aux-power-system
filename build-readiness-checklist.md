@@ -15,14 +15,19 @@ Status key:
 - [x] Module baseline: 8x EVE LF105 cells, 8S, 25.6V nominal, 105Ah, JK Smart BMS, 60A module fuse, manual disconnect, SB120 output.
 - [x] Current targets: 50A single-module max, 100A dual-module combined max.
 - [x] No daisy chaining between modules.
-- [ ] Record final system block diagram revision.
-- [ ] Record final per-module wiring schematic revision.
-- [ ] Record final dock/controller schematic revision.
-- [ ] Record final physical layout drawing revision.
+- [~] Create project documentation folders for diagrams, schemas, structured data, and decisions.
+- [ ] Record final system block diagram revision in [`diagrams/`](diagrams/).
+- [ ] Record final per-module wiring schematic revision in [`diagrams/`](diagrams/).
+- [ ] Record final dock/controller schematic revision in [`diagrams/`](diagrams/).
+- [ ] Record final physical layout drawing revision in [`diagrams/`](diagrams/).
+- [ ] Define reusable information schemas in [`schemas/`](schemas/).
+- [ ] Store reusable design data in [`data/`](data/).
+- [ ] Record accepted design decisions in [`decisions/`](decisions/).
 
 Acceptance criteria:
 
 - One canonical schematic set exists and matches the BOM, wiring table, fuse table, and assembly sequence.
+- Checklist items that close safety-critical decisions link to their diagram, schema/data entry, or decision record.
 
 ## 1. Charger Selection and Charge Architecture
 
@@ -339,4 +344,3 @@ These must be resolved before physical build starts:
 - [!] Required precharge/equalization procedure or circuit.
 - [!] Mechanical sled retention strategy independent of connectors.
 - [!] Exact MPPT and PV string design.
-
