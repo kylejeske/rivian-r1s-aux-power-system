@@ -31,16 +31,16 @@ Acceptance criteria:
 
 ## 1. Charger Selection and Charge Architecture
 
-- [x] Identify exact DC-DC charger model: Victron Orion XS 1400 for mixed-voltage DC-DC charging. See [D-0001](decisions/0001-dc-dc-charger-architecture.md).
-- [x] Confirm charger supports 8S/24V LiFePO4 output voltage range. See [DC-DC charger architecture diagram](diagrams/dc-dc-charger-architecture.mmd).
-- [!] Identify source for DC-DC charging: Rivian 12V, external DC supply, shore charger, or other.
-- [ ] Confirm whether the charger is isolated or non-isolated.
-- [!] Define charger enable/disable control strategy.
-- [!] Define input current limit so the Rivian/source system is not overloaded.
-- [~] Define output current limit for one-module and two-module operation. Candidate: 20A single-module, 30A-40A dual-module pending BMS and thermal validation.
-- [~] Add charger-specific fuse sizes to fuse table. Orion XS 1400 manual calls for 60-70A external battery protection; final placement depends on source and dock wiring.
-- [~] Add charger-specific wire sizes to wire table. Orion XS 1400 manual calls for 6 AWG under 5m and 4 AWG for 5-10m.
-- [ ] Add charger mounting requirements to dock physical layout: vertical, terminals down, non-flammable surface, cooling clearance, no connector strain.
+- [x] Identify intended charging paths: 120V shore power, Rivian 120V outlet, and solar input. See [D-0002](decisions/0002-charging-input-paths.md).
+- [x] Defer DC-DC charging unless a future 12V/24V DC source is intentionally added. See [D-0001](decisions/0001-dc-dc-charger-architecture.md).
+- [x] Define AC charger output class: 24V 25A target, roughly 600W DC output.
+- [x] Select exact AC-to-24V LiFePO4 charger model: Victron Phoenix Smart IP43 24/25.
+- [~] Define AC input method: covered 15A 120VAC inlet, 14 AWG internal AC wiring, hot-side 10A protection, equipment ground to metal enclosure if used, upstream GFCI assumed.
+- [x] Confirm AC charger draw stays within Rivian 120V outlet limit and shore-power assumptions. 24V 25A target is comfortably below Rivian 1500W inverter limit.
+- [x] Define AC charger DC output current for one-module and two-module operation: same 25A charger target for either one or two modules.
+- [~] Add AC charger-specific fuse sizes to fuse table: 10A AC hot-side protection; DC output protection final after charger manual and dock conductor length review.
+- [~] Add AC charger-specific wire sizes to wire table: 14 AWG AC input wiring; DC output wiring/fuse pending final dock layout.
+- [~] Add AC charger mounting requirements to dock physical layout: vertical serviceable mounting, airflow around charger, AC strain relief, AC/DC separation.
 - [ ] Define absorption voltage, float voltage, re-bulk behavior, and charge termination behavior.
 - [ ] Define low-temperature charge cutoff strategy.
 - [ ] Define behavior when BMS disconnects during charging.
@@ -48,20 +48,20 @@ Acceptance criteria:
 
 Acceptance criteria:
 
-- Exact charger SKU is chosen.
+- Exact AC charger SKU is chosen.
 - Its datasheet/manual explicitly supports the planned input and output voltages.
 - Charge settings are written down before hardware is purchased.
 - Failure behavior is understood for BMS disconnect, charger fault, source undervoltage, and module removal.
 
 ## 2. Solar / MPPT Architecture
 
-- [!] Select exact Victron SmartSolar MPPT model.
-- [ ] Define solar panel count, panel Voc, Vmp, Isc, and Imp.
+- [x] Select exact Victron SmartSolar MPPT model: SmartSolar MPPT 100/30.
+- [~] Define solar panel count, panel Voc, Vmp, Isc, and Imp. Target: portable 2S array, 200W-500W nominal, 36V-44V Vmp, cold-corrected Voc below 75V, Isc no higher than 15A at dock input.
 - [ ] Calculate cold-weather corrected Voc.
-- [ ] Confirm PV string voltage never exceeds MPPT input limit.
-- [ ] Confirm PV operating voltage is high enough for a 24V battery bank.
-- [ ] Decide whether panels are series, parallel, or series-parallel.
-- [ ] Define PV disconnect location.
+- [~] Confirm PV string voltage never exceeds MPPT input limit. Target leaves margin below 100V controller limit.
+- [x] Confirm PV operating voltage is high enough for a 24V battery bank: 2S portable-panel target keeps Vmp above battery voltage.
+- [x] Decide whether panels are series, parallel, or series-parallel: prefer 2S portable-panel configuration.
+- [~] Define PV disconnect location: dock-side solar input disconnect or breaker between solar connector and MPPT.
 - [ ] Define PV fuse/breaker needs, especially if using parallel strings.
 - [ ] Define MPPT battery-side fuse size from Victron manual.
 - [ ] Define MPPT battery-side wire gauge and run length.
@@ -76,20 +76,20 @@ Acceptance criteria:
 
 ## 3. Module BMS Selection and Configuration
 
-- [!] Select exact JK BMS model and current rating.
-- [ ] Confirm BMS supports 8S LiFePO4.
-- [ ] Confirm continuous discharge current rating exceeds 60A fuse and 50A operating target with margin.
-- [ ] Confirm charge current rating exceeds planned charger current.
+- [x] Select exact JK BMS model and current rating: JK-B2A8S20P, 200A class. See [D-0003](decisions/0003-bms-selection-and-charge-policy.md).
+- [x] Confirm BMS supports 8S LiFePO4.
+- [x] Confirm continuous discharge current rating exceeds 60A fuse and 50A operating target with margin.
+- [x] Confirm charge current rating exceeds planned charger current. V1 operating policy is one charging source at a time, so normal charge current is 25A AC or up to 30A solar.
 - [ ] Confirm BMS thermal behavior inside the planned enclosure.
-- [ ] Define cell over-voltage cutoff and recovery.
-- [ ] Define cell under-voltage cutoff and recovery.
-- [ ] Define pack over-current cutoff and delay.
-- [ ] Define charge low-temperature cutoff.
-- [ ] Define discharge low-temperature cutoff.
-- [ ] Define high-temperature charge/discharge cutoffs.
-- [ ] Define active balancing start voltage and delta threshold.
-- [ ] Confirm number and placement of temperature sensors.
-- [ ] Decide whether BMS Bluetooth access is sufficient or if service access is needed.
+- [x] Define cell over-voltage cutoff and recovery: 3.60V protect, 3.45V recover.
+- [x] Define cell under-voltage cutoff and recovery: 2.80V protect, 3.00V recover.
+- [x] Define pack over-current cutoff and delay baseline: 75A discharge OCP, 40A charge OCP; delay TBD in commissioning.
+- [x] Define charge low-temperature cutoff: 2C protect, 5C recover.
+- [x] Define discharge low-temperature cutoff: -20C protect, -15C recover.
+- [x] Define high-temperature charge/discharge cutoffs: charge 50C protect/45C recover; discharge 55C protect/50C recover.
+- [x] Define active balancing start voltage and delta threshold: start at 3.45V/cell, 15mV delta.
+- [x] Confirm number and placement of temperature sensors: two cell sensors per module, center-cell group and outside/end-cell group; BMS MOS temperature monitored separately.
+- [x] Decide whether BMS Bluetooth access is sufficient or if service access is needed: provide wired JK display/service port plus Bluetooth.
 
 Acceptance criteria:
 

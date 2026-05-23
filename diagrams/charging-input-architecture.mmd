@@ -1,0 +1,41 @@
+flowchart LR
+  subgraph AC["AC charging inputs"]
+    SHORE["120V shore power"]
+    RIVIAN["Rivian 120V outlet"]
+    ACINLET["Covered 15A 120VAC inlet<br/>one AC source at a time"]
+    ACFUSE["10A hot-side AC protection<br/>14 AWG internal AC wiring"]
+    ACCHG["Victron Phoenix Smart IP43 24/25<br/>120VAC to 24V 25A LiFePO4 charging"]
+  end
+
+  subgraph Solar["Solar charging input"]
+    PANEL["Portable solar panel(s)<br/>2S preferred, 200W-500W<br/>Vmp 36V-44V, cold Voc <75V, Isc <=15A"]
+    SOLARCONN["Anderson Powerpole PP45 solar input<br/>MC4-to-Powerpole panel adapter"]
+    PVDISC["PV disconnect / breaker<br/>rating after exact panels"]
+    MPPT["Victron SmartSolar MPPT 100/30<br/>100V PV max, 30A battery charge max"]
+  end
+
+  subgraph Dock["Dock DC bus"]
+    CHGFUSE["Charger output fuse(s)<br/>final size per charger/MPPT manual"]
+    POSBUS["+24V dock bus"]
+    NEGBUS["System negative bus<br/>load side of SmartShunt"]
+  end
+
+  subgraph Batteries["Battery modules"]
+    M1["Module A<br/>8S LiFePO4 + BMS"]
+    M2["Module B<br/>8S LiFePO4 + BMS"]
+  end
+
+  SHORE --> ACINLET
+  RIVIAN --> ACINLET
+  ACINLET --> ACFUSE --> ACCHG
+  ACCHG --> CHGFUSE --> POSBUS
+  ACCHG --> NEGBUS
+
+  PANEL --> SOLARCONN --> PVDISC --> MPPT
+  MPPT --> CHGFUSE
+  MPPT --> NEGBUS
+
+  POSBUS --> M1
+  POSBUS --> M2
+  NEGBUS --> M1
+  NEGBUS --> M2

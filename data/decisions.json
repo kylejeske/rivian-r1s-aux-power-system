@@ -2,10 +2,10 @@
   {
     "id": "D-0001",
     "title": "DC-DC Charger Architecture",
-    "status": "accepted-with-open-questions",
+    "status": "superseded",
     "date": "2026-05-23",
     "area": "charger-selection",
-    "decision": "Use the Victron Orion XS 1400 as the accepted Orion XS option for 12V/24V source to 8S/24V LiFePO4 DC-DC charging. Do not use the Orion XS 12/12-50A for the 24V battery bank. Keep the Rivian low-voltage source-current question open until the exact source point and continuous current limit are verified.",
+    "decision": "If a future DC source is added, use the Victron Orion XS 1400 as the accepted Orion XS option for 12V/24V source to 8S/24V LiFePO4 DC-DC charging. Do not use the Orion XS 12/12-50A for the 24V battery bank. DC-DC charging is deferred for v1 because the intended charging paths are AC shore, Rivian 120V AC, and solar.",
     "openQuestions": [
       "What exact Rivian or external DC source will feed the charger?",
       "What continuous input current may be drawn safely from that source?",
@@ -28,7 +28,73 @@
       "diagrams": [
         "diagrams/dc-dc-charger-architecture.mmd"
       ],
-      "data": []
+      "data": [
+        "data/components.json"
+      ]
+    }
+  },
+  {
+    "id": "D-0002",
+    "title": "Charging Input Paths",
+    "status": "accepted",
+    "date": "2026-05-23",
+    "area": "charger-selection",
+    "decision": "Use a covered 15A 120VAC input feeding a Victron Phoenix Smart IP43 24/25 AC charger, plus an Anderson Powerpole PP45 solar input feeding a Victron SmartSolar MPPT 100/30. Target 2S portable solar at 200W-500W, Vmp 36V-44V, cold-corrected Voc below 75V, and Isc no higher than 15A at the dock input. Skip DC-DC charging in v1.",
+    "openQuestions": [
+      "Confirm exact AC inlet part number.",
+      "Confirm exact portable solar panels before final PV fuse/breaker sizing.",
+      "Confirm final charger settings after BMS model/settings are selected."
+    ],
+    "evidence": [
+      {
+        "label": "Victron Blue Smart IP22 120V manual",
+        "type": "manual",
+        "reference": "https://www.victronenergy.com/media/pg/Blue_Smart_IP22_Charger_manual_120V/en/operation/charge-modes.html"
+      },
+      {
+        "label": "Victron Phoenix Smart IP43 Charger",
+        "type": "manual",
+        "reference": "https://www.victronenergy.com/chargers/phoenix-smart-ip43-charger"
+      }
+    ],
+    "links": {
+      "checklist": "build-readiness-checklist.md#1-charger-selection-and-charge-architecture",
+      "diagrams": [
+        "diagrams/charging-input-architecture.mmd"
+      ],
+      "data": [
+        "data/components.json"
+      ]
+    }
+  },
+  {
+    "id": "D-0003",
+    "title": "BMS Selection and Charge Policy",
+    "status": "accepted",
+    "date": "2026-05-23",
+    "area": "bms-selection",
+    "decision": "Use one JK-B2A8S20P per battery module. Operate v1 with one charging source at a time. Use conservative LF105 settings: 3.60V OVP, 2.80V UVP, 75A discharge OCP, 40A charge OCP, 2C charge low-temp cutoff, two cell temperature sensors, and wired service/display access plus Bluetooth.",
+    "openQuestions": [
+      "Recheck BMS settings after first bench test and thermal test."
+    ],
+    "evidence": [
+      {
+        "label": "JK-B1A8S20P / JK-B2A8S20P manual copy",
+        "type": "manual",
+        "reference": "https://energiepanda.com/jk-active-balance-bms-jk-b1a8s20p-jk-b2a8s20p-user-manual/"
+      },
+      {
+        "label": "JK-B2A8S20P product listing",
+        "type": "manual",
+        "reference": "https://www.shop.jkbms.com/product/jk-b2a8s20p-200a-smart-bms-2a-active-balancer-12v-24v/"
+      }
+    ],
+    "links": {
+      "checklist": "build-readiness-checklist.md#3-module-bms-selection-and-configuration",
+      "diagrams": [],
+      "data": [
+        "data/components.json"
+      ]
     }
   }
 ]

@@ -6,9 +6,10 @@ Use one decision per file once a topic is resolved or intentionally deferred. Th
 
 ## Planned Decision Records
 
-- [x] [DC-DC charger model and charge architecture](0001-dc-dc-charger-architecture.md).
+- [x] [DC-DC charger model and charge architecture](0001-dc-dc-charger-architecture.md) - deferred unless future DC input is added.
+- [x] [Charging input paths](0002-charging-input-paths.md).
 - [ ] MPPT and solar input architecture.
-- [ ] JK BMS model and configuration.
+- [x] [JK BMS model and charge policy](0003-bms-selection-and-charge-policy.md).
 - [ ] Module fuse and disconnect selection.
 - [ ] Dock-side module input protection.
 - [ ] Module paralleling and precharge/equalization.

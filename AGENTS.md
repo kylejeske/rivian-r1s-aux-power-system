@@ -8,6 +8,7 @@ Guidance for agents working in this repository.
 - When a design choice is made, update the checklist first.
 - If a choice affects wiring, layout, component selection, validation, service procedure, or safety, add or update the relevant artifact in `diagrams/`, `schemas/`, `data/`, or `decisions/`.
 - Link checklist items back to the decision, diagram, schema, or data file that closes them.
+- After a coherent decision batch is accepted and the related files are validated, commit and push the repo so GitHub stays current with the discussion.
 
 ## Decision Records
 
@@ -31,4 +32,3 @@ Keep decision records concise. Do not turn them into long engineering memos. Put
 - Prefer JSON Schema and JSON for reusable structured design data.
 - Keep safety-critical assumptions explicit.
 - Do not mark checklist items closed unless the supporting evidence is linked.
-

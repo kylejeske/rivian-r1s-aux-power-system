@@ -5,8 +5,8 @@
     "manufacturer": "Victron Energy",
     "model": "Orion XS 1400",
     "category": "dc-dc-charger",
-    "status": "selected",
-    "reason": "Supports the 8S/24V LiFePO4 bank voltage range and mixed 12V/24V source use.",
+    "status": "deferred",
+    "reason": "Valid future DC-DC option, but v1 uses 120VAC charging plus solar MPPT and no DC-DC input.",
     "ratings": {
       "inputVoltageRangeV": "9-35",
       "outputVoltageAdjustRangeV": "10-35",
@@ -55,6 +55,136 @@
       {
         "label": "Victron Orion XS 12/12-50A technical data",
         "url": "https://www.victronenergy.com/media/pg/Orion_XS_12-12-50A_DC-DC_battery_charger/en/technical-data.html"
+      }
+    ]
+  },
+  {
+    "id": "C-0003",
+    "name": "Blue Smart IP22 Charger 24V 16A 120V",
+    "manufacturer": "Victron Energy",
+    "model": "Blue Smart IP22 24/16 120V",
+    "category": "ac-charger",
+    "status": "rejected",
+    "reason": "Lower 24V/16A output than the selected 25A target; acceptable fallback but not v1 selected charger.",
+    "ratings": {
+      "nominalBatteryVoltageV": 24,
+      "outputCurrentA": 16,
+      "acInput": "120V",
+      "chargeProfile": "LiFePO4 supported via VictronConnect / Li-ion mode"
+    },
+    "sources": [
+      {
+        "label": "Victron Blue Smart IP22 120V manual",
+        "url": "https://www.victronenergy.com/media/pg/Blue_Smart_IP22_Charger_manual_120V/en/operation/charge-modes.html"
+      }
+    ]
+  },
+  {
+    "id": "C-0004",
+    "name": "Phoenix Smart IP43 Charger 24V 25A",
+    "manufacturer": "Victron Energy",
+    "model": "Phoenix Smart IP43 24/25",
+    "category": "ac-charger",
+    "status": "selected",
+    "reason": "Selected 120VAC-to-24V LiFePO4 charger class for shore and Rivian 120V outlet charging; about 600W DC output.",
+    "ratings": {
+      "nominalBatteryVoltageV": 24,
+      "outputCurrentA": 25,
+      "acInput": "120-240V",
+      "chargeProfile": "LiFePO4 compatible and programmable"
+    },
+    "sources": [
+      {
+        "label": "Victron Phoenix Smart IP43 Charger",
+        "url": "https://www.victronenergy.com/chargers/phoenix-smart-ip43-charger"
+      }
+    ]
+  },
+  {
+    "id": "C-0005",
+    "name": "SmartSolar MPPT 100/30",
+    "manufacturer": "Victron Energy",
+    "model": "SmartSolar MPPT 100/30",
+    "category": "solar-charge-controller",
+    "status": "selected",
+    "reason": "Selected MPPT for portable solar into 24V battery bus; supports 100V PV input and 30A battery charge current.",
+    "ratings": {
+      "maxPvVoltageV": 100,
+      "maxBatteryChargeCurrentA": 30,
+      "suitableBatteryVoltages": "12V and 24V",
+      "targetPvPowerW": "200-500",
+      "targetPvVmpV": "36-44",
+      "targetPvColdVocMaxV": 75,
+      "targetPvIscMaxA": 15
+    },
+    "sources": [
+      {
+        "label": "Victron SmartSolar MPPT 100/30 manual",
+        "url": "https://www.victronenergy.com/media/pg/Manual_SmartSolar_MPPT_100-30__100-50/en/introduction.html"
+      }
+    ]
+  },
+  {
+    "id": "C-0006",
+    "name": "Anderson Powerpole PP45 Solar Input",
+    "manufacturer": "Anderson Power",
+    "model": "Powerpole PP45",
+    "category": "solar-connector",
+    "status": "selected",
+    "reason": "Selected user-facing dock solar input to support portable-panel wiring while avoiding confusion with SB120 battery connectors.",
+    "ratings": {
+      "maxCurrentA": 45,
+      "use": "PV input only",
+      "requiresAdapter": "MC4-to-Powerpole for common panel leads"
+    },
+    "sources": []
+  },
+  {
+    "id": "C-0007",
+    "name": "JK-B2A8S20P Smart Active Balance BMS",
+    "manufacturer": "JKBMS",
+    "model": "JK-B2A8S20P",
+    "category": "battery-management-system",
+    "status": "selected",
+    "reason": "Selected per-module BMS for 8S LiFePO4 modules; 200A hardware rating provides large margin over 50A operating target and 60A fuse.",
+    "ratings": {
+      "supportedLifepo4Series": "4S-8S",
+      "continuousDischargeCurrentA": 200,
+      "peakDischargeCurrentA": 350,
+      "activeBalanceCurrentA": 2,
+      "targetModuleCurrentA": 50,
+      "moduleFuseA": 60,
+      "initialDischargeOverCurrentA": "70-80",
+      "initialChargeOverCurrentA": 40,
+      "cellOverVoltageProtectV": 3.60,
+      "cellOverVoltageRecoverV": 3.45,
+      "cellUnderVoltageProtectV": 2.80,
+      "cellUnderVoltageRecoverV": 3.00,
+      "packChargeVoltageTargetV": "28.0-28.4",
+      "chargeLowTempProtectC": 2,
+      "chargeLowTempRecoverC": 5,
+      "dischargeLowTempProtectC": -20,
+      "dischargeLowTempRecoverC": -15,
+      "chargeHighTempProtectC": 50,
+      "chargeHighTempRecoverC": 45,
+      "dischargeHighTempProtectC": 55,
+      "dischargeHighTempRecoverC": 50,
+      "balanceStartVoltageV": 3.45,
+      "balanceDeltaMv": 15
+    },
+    "installation": {
+      "quantityPerModule": 1,
+      "temperatureSensors": "Two cell sensors per module: center-cell group and outside/end-cell group; BMS MOS temperature monitored separately",
+      "serviceAccess": "Bluetooth plus wired JK display/service port"
+    },
+    "sources": [
+      {
+        "label": "JK-B1A8S20P / JK-B2A8S20P manual copy",
+        "url": "https://energiepanda.com/jk-active-balance-bms-jk-b1a8s20p-jk-b2a8s20p-user-manual/"
+      },
+      {
+        "label": "JK-B2A8S20P product listing",
+        "url": "https://www.shop.jkbms.com/product/jk-b2a8s20p-200a-smart-bms-2a-active-balancer-12v-24v/"
       }
     ]
   }

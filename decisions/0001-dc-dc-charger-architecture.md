@@ -1,6 +1,6 @@
 # Decision: DC-DC Charger Architecture
 
-Status: accepted-with-open-source-current-question
+Status: superseded by D-0002 for v1; keep as future DC-input note
 Date: 2026-05-23
 
 ## Context
@@ -9,7 +9,7 @@ The dock needs controlled DC-DC charging for an 8S/24V LiFePO4 bank. The origina
 
 ## Decision
 
-Use the Victron Orion XS 1400 for mixed-voltage DC-DC charging into the 8S/24V battery bank.
+If a future DC source is added, use the Victron Orion XS 1400 for mixed-voltage DC-DC charging into the 8S/24V battery bank.
 
 Do not use the Orion XS 12/12-50A for this bank; its output range is too low for 8S LiFePO4.
 
@@ -17,8 +17,9 @@ Default to charger mode. Do not use fixed-voltage power-supply mode unless a lat
 
 ## Open Questions
 
-- What exact source feeds the charger: Rivian 12V, external DC, or something else?
-- What continuous input current is safe from that source?
+- Is a DC charging source actually needed in v1?
+- If yes, what exact source feeds the charger: Rivian 12V, external DC, or something else?
+- If yes, what continuous input current is safe from that source?
 - How is charge enable/disable controlled: remote on/off, service switch, BMS allow-to-charge, or source-voltage detection?
 - What final charge settings coordinate with the selected BMS?
 
@@ -31,8 +32,9 @@ Default to charger mode. Do not use fixed-voltage power-supply mode unless a lat
 
 ## Consequences
 
-- Charger model choice is resolved.
-- Charger input fuse/wire sizing remains blocked by source-current verification.
+- DC-DC charging is deferred because the known charging paths are AC shore, Rivian 120V AC, and solar.
+- Charger model choice is resolved only if a future DC input is added.
+- DC-DC input fuse/wire sizing remains blocked by source-current verification.
 - Provisional output current target: 20A single-module, 30A-40A dual-module, pending BMS and thermal validation.
 
 ## Links
