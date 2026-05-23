@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/kylejeske/rivian-r1s-aux-power-system/schemas/decision.schema.json",
+  "title": "Design Decision",
+  "description": "A design decision record for the Rivian R1S modular auxiliary power system.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "title",
+    "status",
+    "date",
+    "area",
+    "decision",
+    "evidence",
+    "links"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^D-[0-9]{4}$"
+    },
+    "title": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["proposed", "accepted", "accepted-with-open-questions", "rejected", "superseded"]
+    },
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "area": {
+      "type": "string"
+    },
+    "decision": {
+      "type": "string"
+    },
+    "openQuestions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["label", "type", "reference"],
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": ["datasheet", "manual", "calculation", "test", "note", "other"]
+          },
+          "reference": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "links": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "checklist": {
+          "type": "string"
+        },
+        "diagrams": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

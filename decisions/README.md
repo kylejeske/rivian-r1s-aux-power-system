@@ -6,7 +6,7 @@ Use one decision per file once a topic is resolved or intentionally deferred. Th
 
 ## Planned Decision Records
 
-- [ ] DC-DC charger model and charge architecture.
+- [x] [DC-DC charger model and charge architecture](0001-dc-dc-charger-architecture.md).
 - [ ] MPPT and solar input architecture.
 - [ ] JK BMS model and configuration.
 - [ ] Module fuse and disconnect selection.
@@ -47,4 +47,3 @@ Tradeoffs, limitations, and follow-up work.
 - Diagrams:
 - Schemas/data:
 ```
-

@@ -31,19 +31,20 @@ Acceptance criteria:
 
 ## 1. Charger Selection and Charge Architecture
 
-- [!] Identify exact DC-DC charger model.
-- [!] Confirm charger supports the intended source voltage and 8S/24V LiFePO4 output.
-- [ ] Identify source for DC-DC charging: Rivian 12V, external DC supply, shore charger, or other.
+- [x] Identify exact DC-DC charger model: Victron Orion XS 1400 for mixed-voltage DC-DC charging. See [D-0001](decisions/0001-dc-dc-charger-architecture.md).
+- [x] Confirm charger supports 8S/24V LiFePO4 output voltage range. See [DC-DC charger architecture diagram](diagrams/dc-dc-charger-architecture.mmd).
+- [!] Identify source for DC-DC charging: Rivian 12V, external DC supply, shore charger, or other.
 - [ ] Confirm whether the charger is isolated or non-isolated.
-- [ ] Define charger enable/disable control strategy.
-- [ ] Define input current limit so the Rivian/source system is not overloaded.
-- [ ] Define output current limit for one-module and two-module operation.
+- [!] Define charger enable/disable control strategy.
+- [!] Define input current limit so the Rivian/source system is not overloaded.
+- [~] Define output current limit for one-module and two-module operation. Candidate: 20A single-module, 30A-40A dual-module pending BMS and thermal validation.
+- [~] Add charger-specific fuse sizes to fuse table. Orion XS 1400 manual calls for 60-70A external battery protection; final placement depends on source and dock wiring.
+- [~] Add charger-specific wire sizes to wire table. Orion XS 1400 manual calls for 6 AWG under 5m and 4 AWG for 5-10m.
+- [ ] Add charger mounting requirements to dock physical layout: vertical, terminals down, non-flammable surface, cooling clearance, no connector strain.
 - [ ] Define absorption voltage, float voltage, re-bulk behavior, and charge termination behavior.
 - [ ] Define low-temperature charge cutoff strategy.
 - [ ] Define behavior when BMS disconnects during charging.
 - [ ] Confirm whether charger requires direct battery sense or can tolerate dock-side switching.
-- [ ] Add charger-specific fuse sizes to fuse table.
-- [ ] Add charger-specific wire sizes to wire table.
 
 Acceptance criteria:
 

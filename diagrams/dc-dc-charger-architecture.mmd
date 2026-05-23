@@ -1,0 +1,31 @@
+flowchart LR
+  subgraph Source["Charging source"]
+    R12["Rivian low-voltage source<br/>12V source point TBD<br/>current limit TBD"]
+    EXT["External DC source<br/>12V or 24V"]
+    AC["Rivian 120V outlet / shore AC<br/>separate AC charger path"]
+  end
+
+  subgraph Dock["Dock charging section"]
+    IFUSE["Input fuse / breaker<br/>size after source current is verified"]
+    SW["Charge enable / service disconnect<br/>remote on/off preferred"]
+    ORION["Victron Orion XS 1400<br/>charger mode<br/>9-35V input, 10-35V output"]
+    OFUSE["Output fuse<br/>size after output current limit is finalized"]
+    POSBUS["+24V dock bus"]
+    NEGBUS["System negative bus<br/>load side of SmartShunt"]
+  end
+
+  subgraph Battery["Battery modules"]
+    M1["Module A<br/>8S LiFePO4 + BMS"]
+    M2["Module B<br/>8S LiFePO4 + BMS"]
+  end
+
+  R12 --> IFUSE
+  EXT --> IFUSE
+  IFUSE --> SW --> ORION --> OFUSE --> POSBUS
+  ORION --> NEGBUS
+  POSBUS --> M1
+  POSBUS --> M2
+  NEGBUS --> M1
+  NEGBUS --> M2
+  AC -. use separate AC-to-24V LiFePO4 charger, not Orion input .-> POSBUS
+

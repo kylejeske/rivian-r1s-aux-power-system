@@ -1,0 +1,34 @@
+[
+  {
+    "id": "D-0001",
+    "title": "DC-DC Charger Architecture",
+    "status": "accepted-with-open-questions",
+    "date": "2026-05-23",
+    "area": "charger-selection",
+    "decision": "Use the Victron Orion XS 1400 as the accepted Orion XS option for 12V/24V source to 8S/24V LiFePO4 DC-DC charging. Do not use the Orion XS 12/12-50A for the 24V battery bank. Keep the Rivian low-voltage source-current question open until the exact source point and continuous current limit are verified.",
+    "openQuestions": [
+      "What exact Rivian or external DC source will feed the charger?",
+      "What continuous input current may be drawn safely from that source?",
+      "Will the charger be controlled by remote on/off, source voltage detection, a BMS allow-to-charge signal, or a service switch?"
+    ],
+    "evidence": [
+      {
+        "label": "Victron Orion XS 1400 technical data",
+        "type": "manual",
+        "reference": "https://www.victronenergy.com/media/pg/Orion_XS_1400_DC-DC_Battery_Charger/en/technical-data.html"
+      },
+      {
+        "label": "Victron Orion XS 12/12-50A technical data",
+        "type": "manual",
+        "reference": "https://www.victronenergy.com/media/pg/Orion_XS_12-12-50A_DC-DC_battery_charger/en/technical-data.html"
+      }
+    ],
+    "links": {
+      "checklist": "build-readiness-checklist.md#1-charger-selection-and-charge-architecture",
+      "diagrams": [
+        "diagrams/dc-dc-charger-architecture.mmd"
+      ],
+      "data": []
+    }
+  }
+]

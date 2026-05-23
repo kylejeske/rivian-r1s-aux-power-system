@@ -1,0 +1,61 @@
+[
+  {
+    "id": "C-0001",
+    "name": "Orion XS 1400 DC-DC Battery Charger",
+    "manufacturer": "Victron Energy",
+    "model": "Orion XS 1400",
+    "category": "dc-dc-charger",
+    "status": "selected",
+    "reason": "Supports the 8S/24V LiFePO4 bank voltage range and mixed 12V/24V source use.",
+    "ratings": {
+      "inputVoltageRangeV": "9-35",
+      "outputVoltageAdjustRangeV": "10-35",
+      "inputOutputCurrentSettingRangeA": "1-50",
+      "maxConstantShortCircuitCurrentA": 50,
+      "continuousOutputPowerAt40CW": 1400,
+      "maxEfficiencyPercent": 98.5,
+      "protectionCategory": "IP65",
+      "maxCableCrossSection": "4 AWG / 21.2 mm2"
+    },
+    "installation": {
+      "externalBatteryProtectionFuseA": "60-70",
+      "minimumCableGaugeUnder5m": "6 AWG / 16 mm2",
+      "minimumCableGauge5to10m": "4 AWG / 21.2 mm2",
+      "mounting": "Vertical on non-flammable surface with terminals down",
+      "coolingClearanceCm": 10,
+      "strainReliefRequired": true,
+      "chargerModeDefault": true
+    },
+    "sources": [
+      {
+        "label": "Victron Orion XS 1400 technical data",
+        "url": "https://www.victronenergy.com/media/pg/Orion_XS_1400_DC-DC_Battery_Charger/en/technical-data.html"
+      },
+      {
+        "label": "Victron Orion XS 1400 installation manual",
+        "url": "https://www.victronenergy.com/media/pg/Orion_XS_1400_DC-DC_Battery_Charger/en/installation.html"
+      }
+    ]
+  },
+  {
+    "id": "C-0002",
+    "name": "Orion XS 12/12-50A DC-DC Battery Charger",
+    "manufacturer": "Victron Energy",
+    "model": "Orion XS 12/12-50A",
+    "category": "dc-dc-charger",
+    "status": "rejected",
+    "reason": "Output voltage adjustment range is 10-17V, which cannot charge an 8S/24V LiFePO4 bank.",
+    "ratings": {
+      "inputVoltageRangeV": "9-17",
+      "outputVoltageAdjustRangeV": "10-17",
+      "inputOutputCurrentSettingRangeA": "1-50",
+      "continuousOutputPowerAt40CW": 700
+    },
+    "sources": [
+      {
+        "label": "Victron Orion XS 12/12-50A technical data",
+        "url": "https://www.victronenergy.com/media/pg/Orion_XS_12-12-50A_DC-DC_battery_charger/en/technical-data.html"
+      }
+    ]
+  }
+]

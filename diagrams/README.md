@@ -6,6 +6,7 @@ Keep diagrams as editable text where possible. Mermaid files are preferred for a
 
 ## Planned Diagrams
 
+- [x] [`dc-dc-charger-architecture.mmd`](dc-dc-charger-architecture.mmd) - DC-DC charger source, control, and dock integration.
 - [ ] `system-architecture.mmd` - full system block diagram.
 - [ ] `battery-module-wiring.mmd` - per-module electrical schematic.
 - [ ] `dock-controller-wiring.mmd` - dock/controller wiring architecture.
@@ -21,4 +22,3 @@ Keep diagrams as editable text where possible. Mermaid files are preferred for a
 - Prefer stable node names so diffs stay readable.
 - Include voltage/current labels where they affect design decisions.
 - Link diagrams from the checklist once they become canonical.
-
