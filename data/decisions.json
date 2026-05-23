@@ -96,5 +96,36 @@
         "data/components.json"
       ]
     }
+  },
+  {
+    "id": "D-0004",
+    "title": "Module Fuse and Disconnect",
+    "status": "accepted",
+    "date": "2026-05-23",
+    "area": "module-protection",
+    "decision": "Use a 60A Littelfuse JLLN060 Class T fuse per module, located close to pack positive, followed by a Blue Sea 6006 manual service disconnect before the SB120 positive. Treat the Blue Sea 6006 as a no-load isolator, not a normal load-breaking switch.",
+    "openQuestions": [
+      "Confirm final fuse holder packaging once the module enclosure layout is drawn.",
+      "Confirm exact insulated covers/boots for fuse holder and switch studs."
+    ],
+    "evidence": [
+      {
+        "label": "Littelfuse JLLN Class T fuse datasheet",
+        "type": "datasheet",
+        "reference": "https://www.littelfuse.com/products/fuses/industrial-power-fuses/class-t-fuses/jlln.aspx"
+      },
+      {
+        "label": "Blue Sea 6006 m-Series battery switch",
+        "type": "datasheet",
+        "reference": "https://www.bluesea.com/products/6006/m-Series_Mini_On-Off_Battery_Switch_with_Key_-_Red"
+      }
+    ],
+    "links": {
+      "checklist": "build-readiness-checklist.md#4-module-fuse-disconnect-and-fault-protection",
+      "diagrams": [],
+      "data": [
+        "data/components.json"
+      ]
+    }
   }
 ]

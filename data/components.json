@@ -187,5 +187,76 @@
         "url": "https://www.shop.jkbms.com/product/jk-b2a8s20p-200a-smart-bms-2a-active-balancer-12v-24v/"
       }
     ]
+  },
+  {
+    "id": "C-0008",
+    "name": "JLLN060 Class T Fuse",
+    "manufacturer": "Littelfuse",
+    "model": "JLLN060",
+    "category": "module-fuse",
+    "status": "selected",
+    "reason": "Selected 60A module fuse with high DC interrupt margin for each removable LiFePO4 module.",
+    "ratings": {
+      "fuseClass": "Class T",
+      "currentA": 60,
+      "voltageDcV": 160,
+      "interruptRatingDcA": 20000,
+      "modulePlacement": "as close to pack positive as practical"
+    },
+    "sources": [
+      {
+        "label": "Littelfuse JLLN Class T fuse datasheet",
+        "url": "https://www.littelfuse.com/products/fuses/industrial-power-fuses/class-t-fuses/jlln.aspx"
+      }
+    ]
+  },
+  {
+    "id": "C-0009",
+    "name": "LFT30060 Class T Fuse Holder",
+    "manufacturer": "Littelfuse",
+    "model": "LFT30060",
+    "category": "module-fuse-holder",
+    "status": "selected",
+    "reason": "Selected holder family for 35A-60A Class T JLLN fuses; exact packaging to confirm in enclosure layout.",
+    "ratings": {
+      "fuseCompatibility": "Class T JLLN 35A-60A",
+      "currentA": 60
+    },
+    "installation": {
+      "requiresInsulatedCover": true,
+      "serviceAccess": "Must be accessible without unpacking cell stack"
+    },
+    "sources": [
+      {
+        "label": "Littelfuse Class T fuse holders",
+        "url": "https://www.littelfuse.com/products/fuse-blocks-fuseholders-and-fuse-accessories/fuse-blocks/class-t-fuse-blocks.aspx"
+      }
+    ]
+  },
+  {
+    "id": "C-0010",
+    "name": "Blue Sea 6006 m-Series On-Off Battery Switch",
+    "manufacturer": "Blue Sea Systems",
+    "model": "6006",
+    "category": "module-service-disconnect",
+    "status": "selected",
+    "reason": "Selected compact manual module service disconnect; use as no-load isolator only, not normal load-break switch.",
+    "ratings": {
+      "continuousCurrentA": 300,
+      "maxVoltageDcV": 48,
+      "switchingRatingA": 25,
+      "use": "no-load service isolation"
+    },
+    "installation": {
+      "placement": "after module fuse on pack positive",
+      "requiresInsulatedBoots": true,
+      "serviceSequence": "Turn off loads and chargers, verify near-zero current, then open disconnect"
+    },
+    "sources": [
+      {
+        "label": "Blue Sea 6006 m-Series battery switch",
+        "url": "https://www.bluesea.com/products/6006/m-Series_Mini_On-Off_Battery_Switch_with_Key_-_Red"
+      }
+    ]
   }
 ]

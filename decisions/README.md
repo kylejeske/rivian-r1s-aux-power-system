@@ -10,7 +10,7 @@ Use one decision per file once a topic is resolved or intentionally deferred. Th
 - [x] [Charging input paths](0002-charging-input-paths.md).
 - [ ] MPPT and solar input architecture.
 - [x] [JK BMS model and charge policy](0003-bms-selection-and-charge-policy.md).
-- [ ] Module fuse and disconnect selection.
+- [x] [Module fuse and disconnect selection](0004-module-fuse-and-disconnect.md).
 - [ ] Dock-side module input protection.
 - [ ] Module paralleling and precharge/equalization.
 - [ ] Connector color/keying strategy.

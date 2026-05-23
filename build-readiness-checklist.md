@@ -99,16 +99,16 @@ Acceptance criteria:
 
 ## 4. Module Fuse, Disconnect, and Fault Protection
 
-- [!] Select exact 60A module fuse type and holder.
-- [!] Confirm module fuse DC voltage rating and interrupt rating are adequate for 8S LiFePO4 fault current.
-- [ ] Decide Class T vs MRBF vs other module fuse format.
-- [ ] Confirm fuse can be mounted close enough to pack positive.
-- [ ] Select exact manual disconnect.
-- [ ] Confirm disconnect is DC-rated for pack voltage and current.
-- [ ] Confirm disconnect can break expected load current without damage.
-- [ ] Define module service sequence.
-- [ ] Define module fuse replacement access.
-- [ ] Add insulated covers for fuse, disconnect, and pack positive path.
+- [x] Select exact 60A module fuse type and holder: Littelfuse JLLN060 Class T fuse with LFT30060 holder family. See [D-0004](decisions/0004-module-fuse-and-disconnect.md).
+- [x] Confirm module fuse DC voltage rating and interrupt rating are adequate for 8S LiFePO4 fault current: 160VDC, 20kA DC interrupt rating.
+- [x] Decide Class T vs MRBF vs other module fuse format: Class T selected for high interrupt margin.
+- [~] Confirm fuse can be mounted close enough to pack positive: required; final location to confirm in module enclosure layout.
+- [x] Select exact manual disconnect: Blue Sea 6006 m-Series battery switch.
+- [x] Confirm disconnect is DC-rated for pack voltage and current: 48VDC max, 300A continuous.
+- [x] Confirm disconnect can break expected load current without damage: treat as no-load service isolator only; do not use for normal load breaking.
+- [x] Define module service sequence: turn off loads and chargers, verify near-zero current, open disconnect, then unplug SB120.
+- [~] Define module fuse replacement access: required without unpacking cell stack; final panel access to confirm in enclosure layout.
+- [~] Add insulated covers for fuse, disconnect, and pack positive path: required; exact boots/covers to confirm in enclosure layout.
 
 Acceptance criteria:
 
