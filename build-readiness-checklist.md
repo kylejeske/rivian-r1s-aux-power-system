@@ -137,15 +137,15 @@ Acceptance criteria:
 
 ## 6. Module Paralleling and Precharge / Equalization
 
-- [!] Define required voltage-match threshold before paralleling.
-- [!] Add v1 precharge/equalization circuit or explicit no-hot-connect service rule.
-- [ ] Select precharge resistor value and wattage.
-- [ ] Define precharge switch or keyed service connector.
-- [ ] Define visual or metered indication that modules are within safe delta.
-- [ ] Define operator sequence for adding second module.
-- [ ] Define operator sequence for removing one module under load.
-- [ ] Define what loads and chargers must be off during connection/disconnection.
-- [ ] Decide whether SB120 connections are user-serviceable hot connections or only de-energized service connections.
+- [x] Define required voltage-match threshold before paralleling: target 0.10V or less; absolute maximum 0.20V.
+- [x] Add v1 precharge/equalization circuit. See [D-0007](decisions/0007-module-paralleling-precharge.md).
+- [x] Select precharge resistor value and wattage: 25 ohm, 50W chassis resistor per module input.
+- [x] Define precharge switch or keyed service connector: momentary precharge switch per module input.
+- [x] Define visual or metered indication that modules are within safe delta: module positive, bus positive, and common negative test points.
+- [x] Define operator sequence for adding second module: breaker off, connect SB120, compare voltage, hold precharge, confirm delta, close breaker, release precharge.
+- [x] Define operator sequence for removing one module under load: turn off loads/chargers, open dock input breaker, open module disconnect, unplug SB120.
+- [x] Define what loads and chargers must be off during connection/disconnection: all loads and charging sources off before adding/removing modules.
+- [x] Decide whether SB120 connections are user-serviceable hot connections or only de-energized service connections: SB120 connections are de-energized service connections only.
 
 Acceptance criteria:
 

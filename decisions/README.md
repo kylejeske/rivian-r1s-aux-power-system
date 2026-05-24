@@ -13,7 +13,7 @@ Use one decision per file once a topic is resolved or intentionally deferred. Th
 - [x] [Module fuse and disconnect selection](0004-module-fuse-and-disconnect.md).
 - [x] [Dock-side module input protection](0005-dock-input-protection.md).
 - [x] [Dock busbar, shunt, and main output](0006-dock-busbar-shunt-main-output.md).
-- [ ] Module paralleling and precharge/equalization.
+- [x] [Module paralleling and precharge/equalization](0007-module-paralleling-precharge.md).
 - [ ] Connector color/keying strategy.
 - [ ] Mechanical sled retention strategy.
 - [ ] Thermal validation acceptance limits.

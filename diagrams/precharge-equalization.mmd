@@ -1,0 +1,28 @@
+flowchart LR
+  subgraph ModuleInput["One dock module input"]
+    SBP["Module SB120 +"]
+    SBN["Module SB120 -"]
+    BRK["60A dock input breaker"]
+    PFUSE["2A precharge fuse"]
+    PSW["momentary precharge switch"]
+    R["25 ohm 50W resistor"]
+    MTP["module + test point"]
+  end
+
+  subgraph DockBus["Dock bus"]
+    POS["+24V positive busbar"]
+    NEG["common negative / shunt battery side"]
+    BTP["bus + test point"]
+    NTP["negative test point"]
+  end
+
+  SBP --> MTP
+  MTP --> BRK --> POS
+  MTP --> PFUSE --> PSW --> R --> POS
+  POS --> BTP
+  SBN --> NEG
+  NEG --> NTP
+
+  classDef note fill:#f7f7f7,stroke:#999,color:#222;
+  SEQ["Sequence: breaker off -> connect SB120 -> compare module/bus voltage -> hold precharge -> close breaker -> release precharge"]:::note
+

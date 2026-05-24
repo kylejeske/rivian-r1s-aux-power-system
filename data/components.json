@@ -393,5 +393,75 @@
         "url": "https://www.andersonpower.com/content/dam/ideal-anderson-power-dotcom/product-assets/default/data-sheets/ds-sb120.pdf"
       }
     ]
+  },
+  {
+    "id": "C-0017",
+    "name": "Precharge Equalization Resistor",
+    "manufacturer": "TBD",
+    "model": "25 ohm 50W chassis resistor",
+    "category": "precharge-resistor",
+    "status": "selected-pending-part-number",
+    "reason": "Selected value for current-limited module-to-bus equalization before closing dock input breaker.",
+    "ratings": {
+      "resistanceOhm": 25,
+      "powerW": 50,
+      "quantityPerModuleInput": 1
+    },
+    "installation": {
+      "mounting": "chassis mount away from heat-sensitive wiring/plastic",
+      "path": "module input positive to bus positive through fuse and momentary switch"
+    },
+    "sources": []
+  },
+  {
+    "id": "C-0018",
+    "name": "Precharge Path Fuse",
+    "manufacturer": "TBD",
+    "model": "2A DC fuse",
+    "category": "precharge-fuse",
+    "status": "selected-pending-part-number",
+    "reason": "Protects small precharge wiring and resistor path.",
+    "ratings": {
+      "currentA": 2,
+      "quantityPerModuleInput": 1
+    },
+    "installation": {
+      "placement": "in precharge path before momentary switch/resistor"
+    },
+    "sources": []
+  },
+  {
+    "id": "C-0019",
+    "name": "Precharge Momentary Switch",
+    "manufacturer": "TBD",
+    "model": "DC-rated momentary switch",
+    "category": "precharge-switch",
+    "status": "selected-pending-part-number",
+    "reason": "Momentary operation prevents precharge path from being left on unintentionally.",
+    "ratings": {
+      "use": "low-current DC precharge control",
+      "quantityPerModuleInput": 1
+    },
+    "installation": {
+      "label": "PRECHARGE / EQUALIZE",
+      "mustBeMomentary": true
+    },
+    "sources": []
+  },
+  {
+    "id": "C-0020",
+    "name": "Precharge Voltage Test Points",
+    "manufacturer": "TBD",
+    "model": "panel test points",
+    "category": "voltage-test-points",
+    "status": "selected-pending-part-number",
+    "reason": "Provides module positive, bus positive, and common negative measurement points for safe paralleling procedure.",
+    "ratings": {
+      "use": "voltage delta check before paralleling"
+    },
+    "installation": {
+      "points": "module positive, bus positive, common negative"
+    },
+    "sources": []
   }
 ]
