@@ -217,5 +217,31 @@
         "data/components.json"
       ]
     }
+  },
+  {
+    "id": "D-0008",
+    "title": "Wire Harness and Cable Fabrication",
+    "status": "accepted",
+    "date": "2026-05-24",
+    "area": "wire-harness",
+    "decision": "Use marine-grade tinned fine-strand copper cable with 105C insulation where practical. Build v1 cables in-house using proper crimp tooling, adhesive heat shrink, labels, continuity checks, pull checks, and visual inspection. No cable goes into final assembly unless it passes the cable fabrication acceptance guide.",
+    "openQuestions": [
+      "Confirm exact lug, heat-shrink, and SB contact part numbers.",
+      "Confirm final cable lengths after physical layout."
+    ],
+    "evidence": [
+      {
+        "label": "Cable fabrication acceptance guide",
+        "type": "note",
+        "reference": "guides/cable-fabrication-acceptance.md"
+      }
+    ],
+    "links": {
+      "checklist": "build-readiness-checklist.md#7-wire-lug-crimp-and-harness-specification",
+      "diagrams": [],
+      "data": [
+        "data/components.json"
+      ]
+    }
   }
 ]

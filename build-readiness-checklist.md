@@ -154,19 +154,20 @@ Acceptance criteria:
 
 ## 7. Wire, Lug, Crimp, and Harness Specification
 
-- [ ] Create final wire schedule with circuit name, current, fuse, wire gauge, insulation type, color, length, and termination.
+- [~] Create final wire schedule with circuit name, current, fuse, wire gauge, insulation type, color, length, and termination: required after physical layout.
 - [ ] Confirm 6 AWG module leads are compatible with chosen SB120 contacts.
-- [ ] Confirm 2 AWG or 4 AWG dock output leads are compatible with chosen SB120/SB175 contacts.
-- [ ] Choose cable type: marine-grade tinned fine-strand preferred.
+- [ ] Confirm 2 AWG dock output leads are compatible with chosen SB120 contacts.
+- [x] Choose cable type: marine-grade tinned fine-strand copper, 105C insulation where practical. See [D-0008](decisions/0008-wire-harness-and-cable-fabrication.md).
 - [ ] Define high-current cable color convention.
 - [ ] Define low-current accessory wire color convention.
-- [ ] Select exact crimp lugs and terminals.
-- [ ] Select crimp tool or service provider.
-- [ ] Define adhesive heat-shrink requirements.
+- [~] Select exact crimp lugs and terminals: pending final wire schedule and stud/contact sizes.
+- [x] Select crimp tool or service provider: v1 cables built in-house with proper crimp tooling.
+- [x] Define adhesive heat-shrink requirements: adhesive-lined heat shrink required on every lug termination.
 - [ ] Define abrasion sleeve and grommet requirements.
-- [ ] Define strain relief within 2-4 inches of each high-current connector.
-- [ ] Define max voltage-drop target per circuit.
-- [ ] Define max acceptable temperature rise under sustained load.
+- [x] Define strain relief within 2-4 inches of each high-current connector.
+- [~] Define max voltage-drop target per circuit: use conservative gauge selections; numeric targets to finalize in wire schedule.
+- [~] Define max acceptable temperature rise under sustained load: final pass/fail limit to define in thermal validation section.
+- [x] Add cable fabrication acceptance process: [Cable fabrication acceptance guide](guides/cable-fabrication-acceptance.md).
 
 Acceptance criteria:
 

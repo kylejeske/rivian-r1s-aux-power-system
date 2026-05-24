@@ -463,5 +463,41 @@
       "points": "module positive, bus positive, common negative"
     },
     "sources": []
+  },
+  {
+    "id": "C-0021",
+    "name": "Marine-Grade Tinned Fine-Strand Copper Cable",
+    "manufacturer": "TBD",
+    "model": "105C insulation, size by circuit",
+    "category": "wire",
+    "status": "selected-pending-part-number",
+    "reason": "Selected cable type for vibration-prone mobile DC wiring.",
+    "ratings": {
+      "insulationTempC": 105,
+      "material": "tinned copper",
+      "strandType": "fine-strand",
+      "sizes": "2 AWG, 6 AWG, 8 AWG, 10 AWG, 12 AWG, 14 AWG"
+    },
+    "installation": {
+      "acceptanceGuide": "guides/cable-fabrication-acceptance.md"
+    },
+    "sources": []
+  },
+  {
+    "id": "C-0022",
+    "name": "Hydraulic/Hex Crimp Tooling",
+    "manufacturer": "TBD",
+    "model": "dies for 2 AWG through 14 AWG plus Anderson contacts",
+    "category": "fabrication-tooling",
+    "status": "selected-pending-part-number",
+    "reason": "Required for in-house v1 cable fabrication.",
+    "ratings": {
+      "wireRange": "2 AWG through 14 AWG"
+    },
+    "installation": {
+      "testCrimpsRequired": true,
+      "acceptanceGuide": "guides/cable-fabrication-acceptance.md"
+    },
+    "sources": []
   }
 ]
