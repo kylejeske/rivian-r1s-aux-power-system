@@ -120,15 +120,15 @@ Acceptance criteria:
 - [x] Make dock-side module input protection mandatory. See [D-0005](decisions/0005-dock-input-protection.md).
 - [x] Select exact dock input protection size and type for each module input: Blue Sea 285-Series 60A DC breaker per module input.
 - [x] Confirm dock input breakers protect against reverse-feed faults from the common bus.
-- [ ] Define positive busbar rating, material, cover, and stud layout.
-- [ ] Define negative busbar rating, material, cover, and stud layout.
-- [ ] Define SmartShunt placement and wiring.
-- [ ] Confirm all load and charge negatives land on the system side of the shunt.
-- [ ] Confirm only module/battery negatives land on the battery side of the shunt.
-- [ ] Define main dock output fuse type and holder.
-- [ ] Confirm 100A dock output fuse DC voltage rating and interrupt rating.
-- [ ] Define main output cable length and gauge.
-- [ ] Define future inverter takeoff location without bypassing shunt or protection.
+- [~] Define positive busbar rating, material, cover, and stud layout: covered 250A-class busbar selected; exact part/stud count pending layout.
+- [~] Define negative busbar rating, material, cover, and stud layout: covered 250A-class busbar selected; exact part/stud count pending layout.
+- [x] Define SmartShunt placement and wiring: Victron SmartShunt 500A on negative side.
+- [x] Confirm all load and charge negatives land on the system side of the shunt.
+- [x] Confirm only module/battery negatives land on the battery side of the shunt.
+- [x] Define main dock output fuse type and holder: Littelfuse JLLN100 100A Class T fuse; holder family pending physical layout.
+- [x] Confirm 100A dock output fuse DC voltage rating and interrupt rating: 160VDC, 20kA DC interrupt rating.
+- [x] Define main output cable length and gauge: 2 AWG fine-strand copper; length pending physical layout.
+- [x] Define future inverter takeoff location without bypassing shunt or protection: reserve physical space only; no energized inverter branch in v1.
 
 Acceptance criteria:
 

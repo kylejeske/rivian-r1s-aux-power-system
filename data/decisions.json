@@ -153,5 +153,41 @@
         "data/components.json"
       ]
     }
+  },
+  {
+    "id": "D-0006",
+    "title": "Dock Busbar, Shunt, and Main Output",
+    "status": "accepted",
+    "date": "2026-05-24",
+    "area": "dock-protection",
+    "decision": "Use covered 250A-class positive and negative busbars, a Victron SmartShunt 500A, a 100A Littelfuse JLLN100 Class T main output fuse, and an Anderson SB120 main output wired with 2 AWG fine-strand copper. Reserve future inverter space only; do not install an inverter takeoff in v1.",
+    "openQuestions": [
+      "Confirm exact covered busbar part numbers after stud count and dock layout are drawn.",
+      "Confirm exact SB120 housing color/key for the main output."
+    ],
+    "evidence": [
+      {
+        "label": "Victron SmartShunt product page",
+        "type": "manual",
+        "reference": "https://www.victronenergy.com/battery-monitors/smart-battery-shunt"
+      },
+      {
+        "label": "Littelfuse JLLN Class T fuse datasheet",
+        "type": "datasheet",
+        "reference": "https://www.littelfuse.com/products/fuses/industrial-power-fuses/class-t-fuses/jlln.aspx"
+      },
+      {
+        "label": "Anderson SB120 data sheet",
+        "type": "datasheet",
+        "reference": "https://www.andersonpower.com/content/dam/ideal-anderson-power-dotcom/product-assets/default/data-sheets/ds-sb120.pdf"
+      }
+    ],
+    "links": {
+      "checklist": "build-readiness-checklist.md#5-dock-input-protection-and-bus-architecture",
+      "diagrams": [],
+      "data": [
+        "data/components.json"
+      ]
+    }
   }
 ]
