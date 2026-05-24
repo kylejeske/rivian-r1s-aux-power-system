@@ -258,5 +258,30 @@
         "url": "https://www.bluesea.com/products/6006/m-Series_Mini_On-Off_Battery_Switch_with_Key_-_Red"
       }
     ]
+  },
+  {
+    "id": "C-0011",
+    "name": "Blue Sea 285-Series 60A DC Circuit Breaker",
+    "manufacturer": "Blue Sea Systems",
+    "model": "285-Series 60A",
+    "category": "dock-input-breaker",
+    "status": "selected",
+    "reason": "Selected per-module dock input breaker for 60A protection and manual dock-side isolation.",
+    "ratings": {
+      "currentA": 60,
+      "voltageDcV": 48,
+      "use": "dock module positive input protection and service isolation",
+      "quantity": 2
+    },
+    "installation": {
+      "placement": "module SB120 positive to breaker to positive busbar",
+      "doesNotReplace": "internal module Class T fuse"
+    },
+    "sources": [
+      {
+        "label": "Blue Sea 285-Series circuit breakers",
+        "url": "https://www.bluesea.com/products/category/14/30/Circuit_Breakers/285-Series"
+      }
+    ]
   }
 ]

@@ -127,5 +127,31 @@
         "data/components.json"
       ]
     }
+  },
+  {
+    "id": "D-0005",
+    "title": "Dock Input Protection",
+    "status": "accepted",
+    "date": "2026-05-24",
+    "area": "dock-protection",
+    "decision": "Use one Blue Sea 285-Series 60A DC breaker on each dock module positive input. Keep the internal module 60A Class T fuse; the dock breaker provides dock-side input protection and service isolation but does not replace module-level fault protection.",
+    "openQuestions": [
+      "Confirm exact Blue Sea 285-Series part number once mounting style is chosen.",
+      "Confirm breaker placement in the dock physical layout."
+    ],
+    "evidence": [
+      {
+        "label": "Blue Sea 285-Series circuit breakers",
+        "type": "datasheet",
+        "reference": "https://www.bluesea.com/products/category/14/30/Circuit_Breakers/285-Series"
+      }
+    ],
+    "links": {
+      "checklist": "build-readiness-checklist.md#5-dock-input-protection-and-bus-architecture",
+      "diagrams": [],
+      "data": [
+        "data/components.json"
+      ]
+    }
   }
 ]

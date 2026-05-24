@@ -117,9 +117,9 @@ Acceptance criteria:
 
 ## 5. Dock Input Protection and Bus Architecture
 
-- [!] Make dock-side module input fusing mandatory or document an equivalent protection method.
-- [ ] Select exact dock input fuse size and type for each module input.
-- [ ] Confirm dock input fuses protect against reverse-feed faults from the common bus.
+- [x] Make dock-side module input protection mandatory. See [D-0005](decisions/0005-dock-input-protection.md).
+- [x] Select exact dock input protection size and type for each module input: Blue Sea 285-Series 60A DC breaker per module input.
+- [x] Confirm dock input breakers protect against reverse-feed faults from the common bus.
 - [ ] Define positive busbar rating, material, cover, and stud layout.
 - [ ] Define negative busbar rating, material, cover, and stud layout.
 - [ ] Define SmartShunt placement and wiring.
