@@ -1,0 +1,18 @@
+flowchart TD
+  START["Start service"]
+  OFF["Turn off loads and chargers"]
+  BREAKER["Open dock input breaker"]
+  DISC["Open module service disconnect"]
+  CHECK["Verify near-zero current and safe voltage delta"]
+  UNPLUG["Unplug gray SB120"]
+  REMOVE["Remove module from sled rails"]
+  INSTALL["Install module on rails and latch"]
+  PLUG["Plug gray SB120 with dock breaker off"]
+  PRE["Hold precharge and compare module/bus voltage"]
+  CLOSE["Close dock input breaker"]
+  VERIFY["Verify current, voltage, and no heat/noise/smell"]
+
+  START --> OFF --> BREAKER --> DISC --> CHECK
+  CHECK --> UNPLUG --> REMOVE
+  CHECK --> INSTALL --> PLUG --> PRE --> CLOSE --> VERIFY
+

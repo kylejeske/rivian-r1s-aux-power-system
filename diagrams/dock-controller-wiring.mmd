@@ -1,0 +1,21 @@
+flowchart LR
+  A["Module A gray SB120 +"] --> ABRK["60A Blue Sea 285 breaker"] --> PBUS["+24V 250A covered busbar"]
+  B["Module B gray SB120 +"] --> BBRK["60A Blue Sea 285 breaker"] --> PBUS
+
+  A -. "2A fuse + momentary + 25 ohm resistor" .-> PBUS
+  B -. "2A fuse + momentary + 25 ohm resistor" .-> PBUS
+
+  AN["Module A gray SB120 -"] --> BATNEG["SmartShunt battery side"]
+  BN["Module B gray SB120 -"] --> BATNEG
+  BATNEG --> SHUNT["Victron SmartShunt 500A"] --> NBUS["system negative busbar"]
+
+  PBUS --> MAINF["100A Class T JLLN100"] --> MAINP["red SB120 main +, 2 AWG"]
+  NBUS --> MAINN["red SB120 main -, 2 AWG"]
+
+  AC["Phoenix Smart IP43 24/25"] --> ACF["charger DC output fuse"] --> PBUS
+  AC --> NBUS
+  MPPT["SmartSolar MPPT 100/30"] --> MPPTF["MPPT battery fuse"] --> PBUS
+  MPPT --> NBUS
+  BRANCH["branch fuse block"] --> PBUS
+  BRANCH --> NBUS
+

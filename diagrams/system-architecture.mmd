@@ -1,0 +1,33 @@
+flowchart LR
+  M1["Module A<br/>8S LF105, JK-B2A8S20P<br/>60A Class T, disconnect, gray SB120"]
+  M2["Module B<br/>8S LF105, JK-B2A8S20P<br/>60A Class T, disconnect, gray SB120"]
+
+  subgraph Dock["Shared dock"]
+    INBRK["2x 60A input breakers"]
+    PRE["precharge/equalization<br/>25 ohm + 2A + momentary"]
+    BUSP["+24V 250A covered busbar"]
+    SHUNT["Victron SmartShunt 500A"]
+    BUSN["system negative busbar"]
+    MAIN["100A Class T<br/>red SB120 main output<br/>2 AWG"]
+    AC["120VAC inlet<br/>Phoenix Smart IP43 24/25"]
+    SOLAR["PP45 solar input<br/>SmartSolar MPPT 100/30"]
+    DIST["branch fuse block<br/>24V + 12V regulated loads"]
+  end
+
+  LOADS["Fridge, Starlink Mini,<br/>USB-C PD, lighting,<br/>small electronics"]
+
+  M1 --> INBRK
+  M2 --> INBRK
+  INBRK --> PRE --> BUSP
+  BUSP --> MAIN
+  BUSP --> DIST --> LOADS
+  AC --> BUSP
+  SOLAR --> BUSP
+  M1 --> SHUNT
+  M2 --> SHUNT
+  SHUNT --> BUSN
+  BUSN --> MAIN
+  BUSN --> DIST
+  BUSN --> AC
+  BUSN --> SOLAR
+

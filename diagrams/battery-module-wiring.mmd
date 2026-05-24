@@ -1,0 +1,17 @@
+flowchart LR
+  CELLS["8x EVE LF105 cells in series<br/>8S, 25.6V nominal, 105Ah"]
+  POS["pack positive"]
+  NEG["pack negative"]
+  FUSE["60A Class T<br/>Littelfuse JLLN060"]
+  DISC["Blue Sea 6006<br/>no-load service disconnect"]
+  BMS["JK-B2A8S20P<br/>BMS negative path"]
+  SBP["gray SB120 +<br/>6 AWG contact 1319G6"]
+  SBN["gray SB120 -<br/>6 AWG contact 1319G6"]
+  TEMP["2x cell temp sensors<br/>center + end cell groups"]
+  SERVICE["wired JK display/service port<br/>plus Bluetooth"]
+
+  CELLS --> POS --> FUSE --> DISC --> SBP
+  CELLS --> NEG --> BMS --> SBN
+  TEMP --> BMS
+  SERVICE --> BMS
+

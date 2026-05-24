@@ -1,0 +1,20 @@
+flowchart TB
+  subgraph Module["Battery module target envelope: 18 in W x 12 in D x 8 in H"]
+    HANDLE["two recessed handles"]
+    PANEL["service panel<br/>fuse, BMS, disconnect"]
+    CONN["gray SB120 + boot<br/>module output"]
+    DISC["Blue Sea 6006<br/>service disconnect"]
+    FUSE["JLLN060 Class T<br/>near pack positive"]
+    BMS["JK-B2A8S20P<br/>air gap / heat path"]
+    CELLS["8x LF105 cell row<br/>G10 liners, compression frame"]
+    RAILS["guided sled rails<br/>latch interface"]
+    VENTS["passive/labyrinth venting<br/>drain path below electronics"]
+  end
+
+  HANDLE --> PANEL
+  PANEL --> DISC --> FUSE --> CELLS
+  CELLS --> BMS
+  DISC --> CONN
+  CELLS --> RAILS
+  VENTS --> BMS
+

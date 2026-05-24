@@ -8,10 +8,10 @@ The goal is to make design decisions machine-checkable over time. For example, a
 
 - [x] [`decision.schema.json`](decision.schema.json) - design decision records with evidence and links.
 - [x] [`component.schema.json`](component.schema.json) - reusable component records for cells, BMS, fuses, connectors, chargers, converters, and loads.
-- [ ] `circuit.schema.json` - circuit definitions with voltage, current, fuse, wire, connector, and source/load relationships.
-- [ ] `wire-schedule.schema.json` - conductor schedule entries.
-- [ ] `fuse-table.schema.json` - fuse/protection entries.
-- [ ] `connector.schema.json` - connector family, keying, color, contact, and rating records.
+- [ ] `circuit.schema.json` - circuit definitions with voltage, current, fuse, wire, connector, and source/load relationships; deferred until measured layout.
+- [ ] `wire-schedule.schema.json` - conductor schedule entries; deferred until measured layout.
+- [ ] `fuse-table.schema.json` - fuse/protection entries; current v1 data is in `component.schema.json`.
+- [ ] `connector.schema.json` - connector family, keying, color, contact, and rating records; current v1 data is in `component.schema.json`.
 - [ ] `test-plan.schema.json` - commissioning and validation test definitions.
 
 ## Conventions

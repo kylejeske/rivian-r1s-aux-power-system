@@ -638,5 +638,104 @@
       "notForPowerCircuits": true
     },
     "sources": []
+  },
+  {
+    "id": "C-0029",
+    "name": "Victron Orion-Tr 24/12-20 Isolated Converter",
+    "manufacturer": "Victron Energy",
+    "model": "Orion-Tr 24/12-20 isolated",
+    "category": "dc-dc-converter",
+    "status": "selected",
+    "reason": "Selected regulated 12V accessory converter for 24V dock bus.",
+    "ratings": {
+      "inputVoltage": "24V nominal",
+      "outputVoltageV": 12.2,
+      "continuousOutputCurrentA": 20,
+      "continuousOutputPowerW": 240
+    },
+    "installation": {
+      "inputFuseA": 15,
+      "outputFuseMaxA": 25,
+      "mountToHeatSpreader": true
+    },
+    "sources": [
+      {
+        "label": "Victron Orion-Tr isolated converter datasheet",
+        "url": "https://www.victronenergy.com/upload/documents/Datasheet-Orion-Tr-DC-DC-converters-isolated-100-250-400W-EN.pdf"
+      }
+    ]
+  },
+  {
+    "id": "C-0030",
+    "name": "24V Branch Fuse Block",
+    "manufacturer": "Blue Sea or equivalent",
+    "model": "covered DC fuse block",
+    "category": "branch-fuse-block",
+    "status": "selected-pending-part-number",
+    "reason": "Covered branch protection for fridge, Starlink, USB-C, lighting, and converter feeds.",
+    "ratings": {
+      "systemVoltageV": 24,
+      "coverRequired": true
+    },
+    "installation": {
+      "labelEveryCircuit": true
+    },
+    "sources": []
+  },
+  {
+    "id": "C-0031",
+    "name": "ICECO APL35 Fridge Branch",
+    "manufacturer": "ICECO",
+    "model": "APL35",
+    "category": "load",
+    "status": "selected",
+    "reason": "Primary camping fridge load on fused 24V branch.",
+    "ratings": {
+      "nominalVoltage": "12/24V DC class",
+      "branchFuseA": 15,
+      "wireGauge": "12 AWG"
+    },
+    "sources": [
+      {
+        "label": "ICECO APL35 product page",
+        "url": "https://iceco.shop/en/products/apl35"
+      }
+    ]
+  },
+  {
+    "id": "C-0032",
+    "name": "Starlink Mini Branch",
+    "manufacturer": "Starlink",
+    "model": "Mini",
+    "category": "load",
+    "status": "selected",
+    "reason": "Primary communications load; run from fused 24V DC branch where practical.",
+    "ratings": {
+      "inputVoltageRangeV": "12-48",
+      "branchFuseA": 10,
+      "wireGauge": "12 AWG"
+    },
+    "sources": [
+      {
+        "label": "Starlink Mini power support",
+        "url": "https://starlink.com/bl/support/article/a7fe6525-5356-a837-48e6-33df176cdbc5"
+      }
+    ]
+  },
+  {
+    "id": "C-0033",
+    "name": "Panel USB-C PD Module",
+    "manufacturer": "TBD",
+    "model": "24V-compatible 100W USB-C PD module",
+    "category": "load",
+    "status": "selected-pending-part-number",
+    "reason": "Panel USB-C PD charging from 24V branch power.",
+    "ratings": {
+      "inputVoltage": "24V compatible required",
+      "outputPowerW": 100,
+      "branchFuseA": 10,
+      "wireGauge": "12 AWG feed"
+    },
+    "sources": []
   }
 ]

@@ -7,9 +7,9 @@ Use this for data that should be reused across Markdown tables, diagrams, BOMs, 
 ## Planned Data Files
 
 - [x] [`components.json`](components.json) - selected or candidate components.
-- [ ] `circuits.json` - electrical circuit definitions.
-- [ ] `wire-schedule.json` - conductor schedule.
-- [ ] `fuses.json` - protection table.
-- [ ] `connectors.json` - connector and keying plan.
+- [ ] `circuits.json` - electrical circuit definitions; deferred until physical layout gives measured wire lengths.
+- [ ] `wire-schedule.json` - conductor schedule; deferred until physical layout gives measured wire lengths.
+- [ ] `fuses.json` - protection table; current v1 fuse decisions are recorded in `components.json`.
+- [ ] `connectors.json` - connector and keying plan; current v1 connector decisions are recorded in `components.json`.
 - [x] [`decisions.json`](decisions.json) - index of accepted decisions.
 - [ ] `tests.json` - commissioning and validation test plan.

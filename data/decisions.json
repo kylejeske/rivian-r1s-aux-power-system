@@ -269,5 +269,134 @@
         "data/components.json"
       ]
     }
+  },
+  {
+    "id": "D-0010",
+    "title": "Mechanical Enclosure and Retention",
+    "status": "accepted",
+    "date": "2026-05-24",
+    "area": "mechanical",
+    "decision": "Use aluminum module enclosures with nonconductive liners, service panels, guided rails, positive latches, and secondary retention. Design retention for 5g forward, 3g lateral, and 3g vertical. SB120 connectors are not structural.",
+    "openQuestions": [
+      "Confirm final enclosure CAD and fastener pattern.",
+      "Confirm exact latch/rail hardware after frunk measurement."
+    ],
+    "evidence": [
+      {
+        "label": "Mechanical enclosure decision",
+        "type": "note",
+        "reference": "decisions/0010-mechanical-enclosure-and-retention.md"
+      }
+    ],
+    "links": {
+      "checklist": "build-readiness-checklist.md#9-mechanical-enclosure-and-sled-retention",
+      "diagrams": [
+        "diagrams/module-physical-layout.mmd",
+        "diagrams/dock-physical-layout.mmd"
+      ],
+      "data": []
+    }
+  },
+  {
+    "id": "D-0011",
+    "title": "Cell Compression and Pack Mechanics",
+    "status": "accepted",
+    "date": "2026-05-24",
+    "area": "cell-compression",
+    "decision": "Use a dedicated compression frame with G10/fiberglass insulation, 0.125 in aluminum end plates, and four 1/4-20 insulated threaded rods or equivalent straps. Busbars are electrical only, not structural.",
+    "openQuestions": [
+      "Confirm LF105 terminal torque from purchased cell supplier documentation.",
+      "Confirm final compression gap/force after actual cells and hardware are measured."
+    ],
+    "evidence": [
+      {
+        "label": "Cell compression decision",
+        "type": "note",
+        "reference": "decisions/0011-cell-compression-and-pack-mechanics.md"
+      }
+    ],
+    "links": {
+      "checklist": "build-readiness-checklist.md#10-cell-compression-and-internal-pack-mechanics",
+      "diagrams": [
+        "diagrams/module-physical-layout.mmd"
+      ],
+      "data": []
+    }
+  },
+  {
+    "id": "D-0012",
+    "title": "Load Distribution and Accessories",
+    "status": "accepted",
+    "date": "2026-05-24",
+    "area": "load-distribution",
+    "decision": "Use a fused 24V branch block for native 24V loads and a Victron Orion-Tr 24/12-20 isolated converter for regulated 12V accessories. Run fridge, Starlink, USB-C PD, lighting, and small electronics from labeled fused branches.",
+    "openQuestions": [
+      "Confirm exact USB-C PD module part numbers.",
+      "Confirm exact panel output count after dock layout.",
+      "Confirm final ICECO and Starlink cable terminations when cables are purchased."
+    ],
+    "evidence": [
+      {
+        "label": "Load distribution decision",
+        "type": "note",
+        "reference": "decisions/0012-load-distribution-and-accessories.md"
+      }
+    ],
+    "links": {
+      "checklist": "build-readiness-checklist.md#12-load-distribution-and-accessory-outputs",
+      "diagrams": [],
+      "data": [
+        "data/components.json"
+      ]
+    }
+  },
+  {
+    "id": "D-0013",
+    "title": "Thermal Design and Validation",
+    "status": "accepted",
+    "date": "2026-05-24",
+    "area": "thermal-validation",
+    "decision": "Use passive cooling with aluminum heat-spreader mounting for electronics. Validate with staged load and charge tests using IR camera and contact thermocouples. Pass if no hot termination exceeds comparable cable by more than 20C and all components remain within ratings.",
+    "openQuestions": [
+      "Confirm final temperature limits against any purchased-component manuals that are stricter than this baseline."
+    ],
+    "evidence": [
+      {
+        "label": "Thermal validation decision",
+        "type": "note",
+        "reference": "decisions/0013-thermal-validation.md"
+      }
+    ],
+    "links": {
+      "checklist": "build-readiness-checklist.md#11-thermal-design-and-validation",
+      "diagrams": [],
+      "data": []
+    }
+  },
+  {
+    "id": "D-0014",
+    "title": "Monitoring, Service, and Future Inverter Boundary",
+    "status": "accepted",
+    "date": "2026-05-24",
+    "area": "service-inverter",
+    "decision": "Use SmartShunt 500A monitoring, labeled voltage test points, service checklists, spare fuses, and a label map. Reserve inverter space only in v1; no inverter connector, fuse, or energized branch is installed.",
+    "openQuestions": [
+      "Confirm final label artwork after physical layout.",
+      "Confirm whether future inverter target exceeds 100A before adding any inverter hardware."
+    ],
+    "evidence": [
+      {
+        "label": "Monitoring service inverter decision",
+        "type": "note",
+        "reference": "decisions/0014-monitoring-service-and-inverter-boundary.md"
+      }
+    ],
+    "links": {
+      "checklist": "build-readiness-checklist.md#13-monitoring-diagnostics-and-service-procedures",
+      "diagrams": [
+        "diagrams/service-sequence.mmd"
+      ],
+      "data": []
+    }
   }
 ]

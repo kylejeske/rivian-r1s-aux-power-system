@@ -1,0 +1,40 @@
+flowchart TB
+  subgraph Front["Front/service edge"]
+    MIA["gray SB120 input A"]
+    MIB["gray SB120 input B"]
+    MAIN["red SB120 main output"]
+    SOLAR["PP45 solar input"]
+    ACIN["covered 120VAC inlet"]
+  end
+
+  subgraph Protection["Protection and bus zone"]
+    BRKA["60A breaker A"]
+    BRKB["60A breaker B"]
+    PREA["precharge A"]
+    PREB["precharge B"]
+    PBUS["covered + busbar"]
+    SHUNT["SmartShunt 500A"]
+    NBUS["covered - busbar"]
+    MAINF["100A Class T"]
+  end
+
+  subgraph Electronics["Electronics zone on aluminum heat spreader"]
+    CHG["Phoenix Smart IP43 24/25"]
+    MPPT["SmartSolar MPPT 100/30"]
+    CONV["24V to 12V converter"]
+    FUSEBLK["branch fuse block"]
+  end
+
+  MIA --> BRKA --> PBUS
+  MIB --> BRKB --> PBUS
+  BRKA --> PREA
+  BRKB --> PREB
+  PBUS --> MAINF --> MAIN
+  SHUNT --> NBUS
+  ACIN --> CHG
+  SOLAR --> MPPT
+  CHG --> PBUS
+  MPPT --> PBUS
+  PBUS --> FUSEBLK
+  FUSEBLK --> CONV
+

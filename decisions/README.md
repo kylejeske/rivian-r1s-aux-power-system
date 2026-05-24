@@ -16,9 +16,11 @@ Use one decision per file once a topic is resolved or intentionally deferred. Th
 - [x] [Module paralleling and precharge/equalization](0007-module-paralleling-precharge.md).
 - [x] [Wire harness and cable fabrication](0008-wire-harness-and-cable-fabrication.md).
 - [x] [Connector color/keying strategy](0009-connector-keying-strategy.md).
-- [ ] Mechanical sled retention strategy.
-- [ ] Thermal validation acceptance limits.
-- [ ] Future inverter boundary.
+- [x] [Mechanical enclosure and retention](0010-mechanical-enclosure-and-retention.md).
+- [x] [Cell compression and pack mechanics](0011-cell-compression-and-pack-mechanics.md).
+- [x] [Load distribution and accessories](0012-load-distribution-and-accessories.md).
+- [x] [Thermal validation acceptance limits](0013-thermal-validation.md).
+- [x] [Monitoring, service, and future inverter boundary](0014-monitoring-service-and-inverter-boundary.md).
 
 ## Template
 
