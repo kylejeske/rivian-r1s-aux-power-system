@@ -373,16 +373,18 @@
     "id": "C-0016",
     "name": "Anderson SB120 Main Output Connector",
     "manufacturer": "Anderson Power",
-    "model": "SB120 red with 2 AWG contacts",
+    "model": "SB120 red housing 6810G3 with 1319 2 AWG contacts",
     "category": "main-output-connector",
-    "status": "selected-pending-contact-part-number",
+    "status": "selected",
     "reason": "Selected for main 24V high-current output; use unique color/key from module inputs.",
     "ratings": {
       "connectorFamily": "SB120",
       "wireGauge": "2 AWG",
       "systemVoltageV": 24,
       "dockOutputCurrentA": 100,
-      "color": "red"
+      "color": "red",
+      "housingPartNumber": "6810G3",
+      "contactPartNumber": "1319"
     },
     "installation": {
       "uniqueKeyColorRequired": true,
@@ -506,15 +508,17 @@
     "id": "C-0023",
     "name": "Anderson SB120 Module Input Connector",
     "manufacturer": "Anderson Power",
-    "model": "SB120 gray with 6 AWG contacts",
+    "model": "SB120 gray housing 6810G1 with 1319G6 6 AWG contacts",
     "category": "module-input-connector",
-    "status": "selected-pending-contact-part-number",
+    "status": "selected",
     "reason": "Selected keyed connector for battery module-to-dock inputs; gray indicates module input only.",
     "ratings": {
       "connectorFamily": "SB120",
       "wireGauge": "6 AWG",
       "use": "battery module input",
-      "color": "gray"
+      "color": "gray",
+      "housingPartNumber": "6810G1",
+      "contactPartNumber": "1319G6"
     },
     "installation": {
       "strainReliefRequired": true,
@@ -557,7 +561,7 @@
     "manufacturer": "Anderson Power",
     "model": "Powerpole PP30/PP45 red-black",
     "category": "accessory-output-connector",
-    "status": "selected-pending-panel-part-number",
+    "status": "selected-pending-load-layout",
     "reason": "Selected connector family for regulated low-current DC accessory outputs.",
     "ratings": {
       "connectorFamily": "Powerpole",
@@ -567,6 +571,71 @@
     "installation": {
       "labelVoltageRequired": true,
       "notForSolarInput": true
+    },
+    "sources": []
+  },
+  {
+    "id": "C-0026",
+    "name": "SB120 Source Environmental Boot With Cover",
+    "manufacturer": "Anderson Power",
+    "model": "3-6034P1",
+    "category": "connector-boot",
+    "status": "selected",
+    "reason": "Selected SB120 environmental boot with cover for source-side/removable energized SB120 connector protection.",
+    "ratings": {
+      "connectorFamily": "SB120",
+      "environmentalProtection": "IP64 with cover",
+      "partNumber": "3-6034P1"
+    },
+    "installation": {
+      "use": "source-side SB120 connectors where appropriate"
+    },
+    "sources": [
+      {
+        "label": "Anderson SB120 environmental boot assembly instructions",
+        "url": "https://www.andersonpower.com/content/dam/app/ecommerce/product-pdfs/SB120/1s6596.pdf"
+      }
+    ]
+  },
+  {
+    "id": "C-0027",
+    "name": "SB120 Load Environmental Boot With Cover",
+    "manufacturer": "Anderson Power",
+    "model": "3-6035P1",
+    "category": "connector-boot",
+    "status": "selected",
+    "reason": "Selected SB120 environmental boot with cover for load-side/panel-side SB120 connector protection.",
+    "ratings": {
+      "connectorFamily": "SB120",
+      "environmentalProtection": "IP64 with cover",
+      "partNumber": "3-6035P1"
+    },
+    "installation": {
+      "use": "load-side or panel-side SB120 connectors where appropriate"
+    },
+    "sources": [
+      {
+        "label": "Anderson SB120 environmental boot assembly instructions",
+        "url": "https://www.andersonpower.com/content/dam/app/ecommerce/product-pdfs/SB120/1s6596.pdf"
+      }
+    ]
+  },
+  {
+    "id": "C-0028",
+    "name": "Deutsch DTM 4-Pin BMS Service Connector",
+    "manufacturer": "TE Connectivity / Deutsch",
+    "model": "DTM 4-pin family",
+    "category": "service-connector",
+    "status": "selected-pending-pinout-confirmation",
+    "reason": "Selected low-current keyed connector family for BMS display/service wiring; final pinout must match JK harness.",
+    "ratings": {
+      "connectorFamily": "Deutsch DTM",
+      "pinCount": 4,
+      "use": "BMS display/service wiring"
+    },
+    "installation": {
+      "confirmPinoutBeforeBuild": true,
+      "notForPowerCircuits": true
     },
     "sources": []
   }

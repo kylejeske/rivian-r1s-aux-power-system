@@ -250,11 +250,10 @@
     "status": "accepted",
     "date": "2026-05-24",
     "area": "connector-strategy",
-    "decision": "Use gray SB120 connectors for battery module-to-dock inputs, red SB120 for the main 24V high-current output, blue SB175 reserved for a future inverter path, PP45 for solar input with MC4 adapter, and red/black Powerpole for regulated accessory outputs.",
+    "decision": "Use gray Anderson SB120 6810G1 housings with 1319G6 6 AWG contacts for module inputs; red Anderson SB120 6810G3 housings with 1319 2 AWG contacts for main 24V output; SB120 environmental boots/covers 3-6034P1/3-6035P1; PP45 for solar input with MC4 adapter; red/black Powerpole for regulated accessory outputs; Deutsch DTM 4-pin for BMS service/display if the JK harness pinout matches.",
     "openQuestions": [
-      "Confirm exact SB120 contact part numbers for 6 AWG module wiring and 2 AWG main output wiring.",
       "Confirm exact low-current accessory connector panel parts after load layout.",
-      "Confirm service connector style for BMS display/service wiring."
+      "Confirm final BMS display/service pinout against the JK harness."
     ],
     "evidence": [
       {
