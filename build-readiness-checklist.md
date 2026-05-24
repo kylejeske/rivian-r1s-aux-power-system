@@ -176,15 +176,15 @@ Acceptance criteria:
 
 ## 8. Connector Strategy
 
-- [ ] Select exact Anderson SB120 housings and contacts for module inputs.
-- [ ] Select exact Anderson SB120 or SB175 housing and contacts for main output.
-- [ ] Define connector color/keying plan.
-- [ ] Confirm module connectors cannot mate with main output or inverter output if that would be unsafe.
+- [~] Select exact Anderson SB120 housings and contacts for module inputs: gray SB120 with 6 AWG contacts; exact contact part number pending.
+- [~] Select exact Anderson SB120 housing and contacts for main output: red SB120 with 2 AWG contacts; exact contact part number pending.
+- [x] Define connector color/keying plan. See [D-0009](decisions/0009-connector-keying-strategy.md).
+- [x] Confirm module connectors cannot mate with main output or inverter output if that would be unsafe: gray SB120 module inputs, red SB120 main output, blue SB175 future inverter.
 - [ ] Select environmental boots or covers for exposed SB connectors.
-- [ ] Select low-current accessory connectors.
-- [ ] Select solar connector/bulkhead type.
+- [~] Select low-current accessory connectors: red/black Anderson Powerpole PP30/PP45 family, exact panel parts pending load layout.
+- [x] Select solar connector/bulkhead type: Anderson Powerpole PP45 solar input with MC4-to-Powerpole adapter.
 - [ ] Select signal/service connector type if needed.
-- [ ] Define connector labeling format.
+- [~] Define connector labeling format: function and voltage labels required; final label schedule pending layout.
 
 Acceptance criteria:
 

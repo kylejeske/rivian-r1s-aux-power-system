@@ -373,19 +373,21 @@
     "id": "C-0016",
     "name": "Anderson SB120 Main Output Connector",
     "manufacturer": "Anderson Power",
-    "model": "SB120 with 2 AWG contacts",
+    "model": "SB120 red with 2 AWG contacts",
     "category": "main-output-connector",
-    "status": "selected-pending-key-color",
+    "status": "selected-pending-contact-part-number",
     "reason": "Selected for main 24V high-current output; use unique color/key from module inputs.",
     "ratings": {
       "connectorFamily": "SB120",
       "wireGauge": "2 AWG",
       "systemVoltageV": 24,
-      "dockOutputCurrentA": 100
+      "dockOutputCurrentA": 100,
+      "color": "red"
     },
     "installation": {
       "uniqueKeyColorRequired": true,
-      "strainReliefRequired": true
+      "strainReliefRequired": true,
+      "mainOutputOnly": true
     },
     "sources": [
       {
@@ -497,6 +499,74 @@
     "installation": {
       "testCrimpsRequired": true,
       "acceptanceGuide": "guides/cable-fabrication-acceptance.md"
+    },
+    "sources": []
+  },
+  {
+    "id": "C-0023",
+    "name": "Anderson SB120 Module Input Connector",
+    "manufacturer": "Anderson Power",
+    "model": "SB120 gray with 6 AWG contacts",
+    "category": "module-input-connector",
+    "status": "selected-pending-contact-part-number",
+    "reason": "Selected keyed connector for battery module-to-dock inputs; gray indicates module input only.",
+    "ratings": {
+      "connectorFamily": "SB120",
+      "wireGauge": "6 AWG",
+      "use": "battery module input",
+      "color": "gray"
+    },
+    "installation": {
+      "strainReliefRequired": true,
+      "moduleInputOnly": true
+    },
+    "sources": [
+      {
+        "label": "Anderson SB120 data sheet",
+        "url": "https://www.andersonpower.com/content/dam/ideal-anderson-power-dotcom/product-assets/default/data-sheets/ds-sb120.pdf"
+      }
+    ]
+  },
+  {
+    "id": "C-0024",
+    "name": "Anderson SB175 Future Inverter Connector",
+    "manufacturer": "Anderson Power",
+    "model": "SB175 blue",
+    "category": "future-inverter-connector",
+    "status": "reserved-not-installed",
+    "reason": "Reserved future inverter connector family/color; not installed in v1.",
+    "ratings": {
+      "connectorFamily": "SB175",
+      "use": "future inverter",
+      "color": "blue"
+    },
+    "installation": {
+      "notInstalledInV1": true,
+      "requiresSeparateDesignReview": true
+    },
+    "sources": [
+      {
+        "label": "Anderson SB connector resources",
+        "url": "https://www.andersonpower.com/us/en/resources/SBResourcesPage.html"
+      }
+    ]
+  },
+  {
+    "id": "C-0025",
+    "name": "Powerpole Regulated Accessory Output",
+    "manufacturer": "Anderson Power",
+    "model": "Powerpole PP30/PP45 red-black",
+    "category": "accessory-output-connector",
+    "status": "selected-pending-panel-part-number",
+    "reason": "Selected connector family for regulated low-current DC accessory outputs.",
+    "ratings": {
+      "connectorFamily": "Powerpole",
+      "use": "regulated accessory output",
+      "color": "red-black"
+    },
+    "installation": {
+      "labelVoltageRequired": true,
+      "notForSolarInput": true
     },
     "sources": []
   }

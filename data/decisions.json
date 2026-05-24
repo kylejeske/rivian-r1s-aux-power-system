@@ -243,5 +243,32 @@
         "data/components.json"
       ]
     }
+  },
+  {
+    "id": "D-0009",
+    "title": "Connector Keying Strategy",
+    "status": "accepted",
+    "date": "2026-05-24",
+    "area": "connector-strategy",
+    "decision": "Use gray SB120 connectors for battery module-to-dock inputs, red SB120 for the main 24V high-current output, blue SB175 reserved for a future inverter path, PP45 for solar input with MC4 adapter, and red/black Powerpole for regulated accessory outputs.",
+    "openQuestions": [
+      "Confirm exact SB120 contact part numbers for 6 AWG module wiring and 2 AWG main output wiring.",
+      "Confirm exact low-current accessory connector panel parts after load layout.",
+      "Confirm service connector style for BMS display/service wiring."
+    ],
+    "evidence": [
+      {
+        "label": "Anderson SB120 data sheet",
+        "type": "datasheet",
+        "reference": "https://www.andersonpower.com/content/dam/ideal-anderson-power-dotcom/product-assets/default/data-sheets/ds-sb120.pdf"
+      }
+    ],
+    "links": {
+      "checklist": "build-readiness-checklist.md#8-connector-strategy",
+      "diagrams": [],
+      "data": [
+        "data/components.json"
+      ]
+    }
   }
 ]
